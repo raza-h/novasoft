@@ -1,0 +1,51 @@
+:root {
+  --bg: #060514;
+  --fg: #4EF5E7;
+}
+
+*
+{
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar
+{
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--fg);
+}
+
+body
+{
+  background-color: var(--bg) !important;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes rotate-right-45 {
+  0%
+  {
+    transform: rotate(0deg);
+  }
+  100%
+  {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes rotate-right-90 {
+  0%
+  {
+    transform: rotate(45deg);
+  }
+  100%
+  {
+    transform: rotate(90deg);
+  }
+}
