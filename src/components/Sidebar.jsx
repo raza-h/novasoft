@@ -9,10 +9,21 @@ const Sidebar = () => {
 
   const [left, setLeft] = useState('-100%');
   const toggleSidebar = () => {left[0] === '-' ? setLeft('0%') : setLeft('-100%')};
+  const [width, setWidth] = useState(0);
+
+  window.addEventListener('resize', () => {
+    setWidth(window.innerWidth);
+    setCurrIndex(0);
+  });
 
   useEffect(() =>
   {
-    left[0] === '-' ? document.body.style.overflowY = "auto" : document.body.style.overflowY = "hidden";
+    setWidth(window.innerWidth);
+  }, [window.innerWidth]);
+
+  useEffect(() =>
+  {
+    left[0] !== '-' && width < 1024 ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "auto";
 
     return () => {
         document.body.style.overflowY = "auto";
